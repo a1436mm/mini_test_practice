@@ -31,8 +31,19 @@ class TestMiniTestPractice < MiniTest::Unit::TestCase
   def test_devide
   assert_equal 10 ,@myClass.devide(20,2)
   assert_equal 2.5  ,@myClass.devide(10,4)
-#  assert_kind_of(Error,"NO") @myClass.devide(10,0)
+  assert_throws(ZeroDivisionError){ @myClass.devide(10,0)}
   end
 
+  def test_fizz_buzz
+  assert_equal 'Fizz' ,@myClass.fizz_buzz(3)
+  assert_equal 'Buzz' ,@myClass.fizz_buzz(5)
+  assert_equal 'FizzBuzz' ,@myClass.fizz_buzz(15)
+  assert_equal '', @myClass.fizz_buzz(0)
+  assert_equal '' ,@myClass.fizz_buzz(2)
+  end
 
+  def test_Hello
+  assert_equal  'Hello',capture_io{@myClass.Hello}[0]
+
+  end
 end
