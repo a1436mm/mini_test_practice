@@ -44,6 +44,5 @@ class TestMiniTestPractice < MiniTest::Unit::TestCase
 
   def test_Hello
   assert_equal  'Hello',capture_io{@myClass.Hello}[0]
-
   end
 end
